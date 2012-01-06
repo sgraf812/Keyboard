@@ -147,14 +147,6 @@ namespace Keyboard.Tests.Unit
         }
 
         [Test]
-        public void SendsNullMessageForSynchronization()
-        {
-            _keyboard.KeyDown(Keys.A);
-            ShouldReceiveKeyDown(Keys.A);
-            ShouldReceiveNullMessage();
-        }
-
-        [Test]
         public void SendsScanCodeWithEachMessage()
         {
             _mapperMock.Setup(x => x.MapToScanCode(Keys.A)).Returns(0x1E);
