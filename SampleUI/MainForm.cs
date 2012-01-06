@@ -29,7 +29,7 @@ namespace SampleUI
                 if (proc.MainWindowHandle == IntPtr.Zero) continue;
                 _drivers[proc] = CreateKeyboardDriver(proc);
                 _lstProcesses.Items.Add(proc.Id);
-                _drivers[proc].Write("/hithere \n");
+                //_drivers[proc].Write("/hithere \n"); // '/' doesn't work
                 proc.Exited += (s, ev) =>
                 {
                     _drivers.Remove(proc);
